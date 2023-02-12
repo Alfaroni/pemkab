@@ -1,0 +1,127 @@
+//header
+$color-primary-red: #E81F28
+$color-primary-blue: #018DD5
+//hamburger
+%hamburgerinner
+    display: block
+    width: 100%
+    border-radius: 2px
+    height: 2px
+    position: absolute
+    transition: transform 0.15s ease
+.hamburger
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100%
+    &.active 
+        .hamburger-icon-inner
+            transform: translate3d(0, 0, 0) rotate(45deg)
+            &::before
+                transform: rotate(-45deg) translate3d(-6px, -6px, 0)
+                opacity: 0
+            &::after
+                transform: translate3d(0, -8px, 0) rotate(-90deg)
+    &-icon
+        width: 28px
+        height: 18px
+        display: inline-block
+        vertical-align: middle
+        position: relative
+        &-inner
+            top: 9px
+            @extend %hamburgerinner
+            &::before, 
+            &::after
+                content: ""
+                background-color: inherit
+                @extend %hamburgerinner
+            &::before
+                top: -8px
+            &::after
+                bottom: -8px
+
+.header 
+    &-menu
+        &-list-item 
+            position: relative
+            &:first-child
+                border-top: 0
+            > a
+                display: flex
+                align-items: center
+                justify-content: space-between
+                padding: .5rem 0
+                position: relative
+                &::after
+                    $size: .25rem
+                    content: ""
+                    position: absolute
+                    bottom: -$size
+                    left: 0
+                    background: linear-gradient(90deg, rgba($color-primary-blue,1) 0%, rgba($color-primary-red,1) 100%)
+                    width: 100%
+                    height: $size
+                    transform: scale(0)
+                    border-radius: $size
+                    transition: .3s ease
+                    opacity: 0
+            &.active,
+            &:hover 
+                >a::after 
+                    opacity: 1
+                    transform: scale(1) 
+            .sub
+                &-list-item
+                    >a 
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        padding: 1rem
+                    &.active >a
+                        background-color: var(--color-primary-80) 
+                    .sub 
+                        &-list-item 
+                            >a
+                                padding-left: 2rem
+    &-sub
+        &.open 
+            display: none
+        &-list
+            &-item 
+                flex: 1
+                position: relative
+                white-space: nowrap
+                > a 
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    text-align: center
+                    padding: 0 1rem
+                    height: 100%
+                &.active,
+                &:hover
+                    >a 
+                        background-color: var(--color-primary-80)
+                        & + .header-sub-list-item-sub
+                            opacity: 1 
+                            pointer-events: auto
+                &-sub 
+                    opacity: 0
+                    pointer-events: none
+                    transition: .3s ease
+                    &-item > a
+                        display: block
+                        padding: .75rem 1.5rem 
+                        &:hover 
+                            background-color: var(--color-primary-yellow)
+                
+@media(min-width:1024px)
+    .header
+        &-menu-list-item >.sub.open 
+            display: none
+        &-sub
+            &.open 
+                display: block
+
+

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Buku Saku</title>
+        <meta name="description" content="BukuSaku" />
+        <meta name="keywords" content="BukuSaku" />
+        <meta http-equiv="cache-control" content="public, no-transform" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="canonical" href="">
+        <link rel="shortcut icon" href="" />
+
+        <!--nub.core -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+        <link href="css/main.min.css" rel="stylesheet">
+
+    </head>
+    <body class="text-base bg-primary text-white">
+
+        <!--header-->
+        <header class="header fixed top-0 inset-x-0 z-30">
+            <div class="header-body relative container w-full max-w-screen-xl mx-auto px-6 bg-primary">
+                <!--headae.navbar-->
+                <div class="header-navbar h-20 flex items-center justify-between gap-6">
+                    <div class="header-logo h-full flex items-center gap-4 lg:pr-12 lg:gap-12">
+                        <a href="/" class="logo logo--pemkab"><img alt="image" src="assets/logo-pemkab.png" class="object-contain" width="36" height="20"></a>
+                        <a href="/" class="logo logo--bkad"><img alt="image" src="assets/logo-bkad.png" class="object-contain" width="112" height="20"></a>
+                    </div>
+                    <div data-toggle-open="menu" class="header-menu fixed inset-0 overflow-y-auto transform translate-x-full flex-1 bg-primary-60 lg:relative lg:overflow-visible lg:translate-x-0 lg:bg-current z-10">
+                        <div class="header-menu-inner flex items-start min-h-full pt-20 p-6 lg:py-2 lg:px-12 lg:border-l-2 lg:border-primary-60">
+                            <ul class="header-menu-list flex flex-col uppercase gap-6 font-medium list-none flex-1 lg:flex-row">
+                                <li class="header-menu-list-item"><a href="#">Home</a></li>
+                                <li class="header-menu-list-item active">
+                                    <a data-dropdown="dashboard" href="#">Dashboard
+                                        <i class="caret ml-2 lg:hidden">
+                                            <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1L4 4L7 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </i>
+                                    </a>
+                                    <div data-dropdown-open="dashboard" class="sub mt-4 text-xs hidden open">
+                                        <ul class="sub-list flex flex-col">
+                                            <li class="sub-list-item"><a href="">APBD</a></li>
+                                            <li class="sub-list-item"><a href="">SKPD</a></li>
+                                            <li class="sub-list-item"><a href="">Anggaran Pendidikan</a></li>
+                                            <li class="sub-list-item">
+                                                <a href="#" data-dropdown="anggaran">Anggaran Kesehatan 
+                                                    <i class="caret ml-2">
+                                                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M1 1L4 4L7 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </i>
+                                                </a>
+                                                <div data-dropdown-open="anggaran" class="sub hidden">
+                                                    <ul class="sub-list flex flex-col">
+                                                        <li class="sub-list-item"><a href="">2023</a></li>
+                                                        <li class="sub-list-item"><a href="">2022 (Awal)</a></li>
+                                                        <li class="sub-list-item"><a href="">2023 (Perubahan)</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="sub-list-item"><a href="">Rasio Belanja Pegawai</a></li>
+                                            <li class="sub-list-item"><a href="">ADD</a></li>
+                                            <li class="sub-list-item"><a href="">Bagi Hasil Pajak</a></li>
+                                            <li class="sub-list-item"><a href="">Bagi Hasil Restribusi</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header-menu-list-item"><a data-toggle="login" href="#">Hitung APBD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-button flex items-center gap-4">
+                        <!-- <a href="#" data-toggle="login"  class="btn btn--login rounded-full flex item-center py-3 px-10 bg-primary-80 hover:bg-primary-dark">Login</a> -->
+                        <div class="header-logo-hamburger relative z-10 lg:hidden">
+                            <button data-toggle="menu" class="hamburger -mr-6 pr-6" type="button">
+                                <div class="hamburger-icon">
+                                    <span class="hamburger-icon-inner bg-white"></span>
+                                </div>
+                            </button>
+                        </div>
+                    </div> 
+                </div>
+                    
+                <!--header.sub-->
+                <div data-dropdown-open="dashboard" class="header-sub bg-primary-60 h-12 mt-4 text-xs hidden lg:text-sm lg:h-16 open">
+                    <ul class="header-sub-list flex justify-between h-full">
+                        <li class="header-sub-list-item"><a href="">APBD</a></li>
+                        <li class="header-sub-list-item"><a href="">SKPD</a></li>
+                        <li class="header-sub-list-item"><a href="">Anggaran Pendidikan</a></li>
+                        <li class="header-sub-list-item">
+                            <a href="">Anggaran Kesehatan 
+                                <i class="caret ml-2">
+                                    <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L4 4L7 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </i>
+                            </a>
+                            <ul class="header-sub-list-item-sub flex flex-col absolute inset-x-0 bg-primary-80/50">
+                                <li class="header-sub-list-item-sub-item"><a href="">2023</a></li>
+                                <li class="header-sub-list-item-sub-item"><a href="">2022 (Awal)</a></li>
+                                <li class="header-sub-list-item-sub-item"><a href="">2023 (Perubahan)</a></li>
+                            </ul>
+                        </li>
+                        <li class="header-sub-list-item"><a href="">Rasio Belanja Pegawai</a></li>
+                        <li class="header-sub-list-item"><a href="">ADD</a></li>
+                        <li class="header-sub-list-item"><a href="">Bagi Hasil Pajak</a></li>
+                        <li class="header-sub-list-item"><a href="">Bagi Hasil Restribusi</a></li>
+                    </ul>
+                </div>  
+
+            </div>
+        </header>
+        
+        <div data-toggle-open="login" class="modal fixed top-1/2 inset-x-0 w-full max-w-md mx-auto -mt-72 lg:left-1/2 lg:ml-44 opacity-0 pointer-events-none z-20">
+            <div class="modal-inner min-h-full px-6">
+                <div class="modal-inner-body relative bg-white bg-opacity-50 backdrop-filter backdrop-blur-xs text-black border w-full p-12 pt-24 rounded-xl">
+                    <a href="#" data-toggle-close class="absolute top-4 right-4 text-white">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 27.5C21.9036 27.5 27.5 21.9036 27.5 15C27.5 8.09644 21.9036 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9036 8.09644 27.5 15 27.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18.75 11.25L11.25 18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11.25 11.25L18.75 18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div class="form flex flex-col gap-6">
+                        <div class="form-group border border-gradient rounded-xl">
+                            <input type="text" class="form-control h-10 px-4" placeholder="Nama">
+                        </div>
+                        <div class="form-group border border-gradient rounded-xl">
+                            <input type="text" class="form-control h-10 px-4" placeholder="Jabatan">
+                        </div>
+                        <div class="form-group border border-gradient rounded-xl">
+                            <input type="password" class="form-control h-10 px-4" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn--login w-full uppercase text-white rounded-xl font-semibold h-10 items-center bg-yellow-600">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--main-->
+        <main class="main h-full" role="main">
+
+            <!-- section.apbd.pd.pad -->
+            <div class="section section--apbd-pd-pad min-h-full relative py-24 lg:pt-48">
+                <div class="section-body relative container w-full h-full max-w-screen-xl mx-auto px-6">
+                    <div class="relative flex flex-col items-center gap-6 lg:flex-row-reverse px-20">
+                        <div class="text-primary bg-gradient-to-r from-primary-gray p-6 w-full lg:pl-52 lg:-ml-48 lg:w-6/12">
+                            <h4 class="text-4xl leading-tight font-bold uppercase mb-4">Komposisi Pendapatan <br> Asli Daerah <br>(PAD)</h4>
+                            <h1 class="flex flex-col text-primary-orange text-7xl font-bold mb-6">978,03 <span class="text-sm font-normal">Miliar Rupiah</span><span class="text-4xl font-normal">100%</span></h1>
+                            <p class="text-sm"><img class="object-contain mb-4" src="assets/line.svg" width="90" height="45">
+                                Nilai PAD pada Tahun 2022
+                                sebesar 978,03 Miliar, dengan
+                                komposisi terbesar dari Pajak
+                                Daerah yaitu sebesar 414,49 Miliar
+                                atau 42,38%, yang dalam hal ini
+                                sebagian besar bersumber dari
+                                Pendapatan Pajak Bumi dan
+                                Bangunan Perdesaan dan
+                                Perkotaan (PBBP2)
+                                yaitu sebesar 135 Miliar</p>
+                        </div>                 
+                        <div class="section--apbd-pd-pad-list flex flex-col flex-1 gap-6">
+                            <div class="section--apbd-pd-pad-list-item">
+                                <div class="flex items-center justify-between bg-gradient-to-r from-primary text-primary-yellow h-28 px-6 rounded-3xl">
+                                    <div class="w-10 h-10 lg:w-32 lg:h-32 rounded-full bg-cover bg-no-repeat text-primary lg:pr-4 flex items-center justify-center lg:text-5xl font-bold" style="background-image: url('assets/pad-numb.svg');">01</div>
+                                    <p class="text-xs lg:text-lg font-bold text-center flex-1 uppercase px-6">Pajak <br>Daerah</p>
+                                    <p class="border-l border-primary-40 flex flex-col pl-6 w-24 text-xs lg:w-36">
+                                        <span class="text-2xl leading-tight font-bold">414, 49 <small class="block font-normal">Miliar Rupiah</small></span>
+                                        <span class="text-white">42,38%</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="section--apbd-pd-pad-list-item">
+                                <div class="flex items-center justify-between bg-gradient-to-r from-primary text-primary-yellow h-28 px-6 rounded-3xl">
+
+                                    <div class="w-10 h-10 lg:w-32 lg:h-32 rounded-full bg-cover bg-no-repeat text-primary lg:pr-4 flex items-center justify-center lg:text-5xl font-bold" style="background-image: url('assets/pad-numb.svg');">02</div>
+                                    <p class="text-xs lg:text-lg font-bold text-center flex-1 uppercase px-6">Retribusi <br>Daerah</p>
+                                    <p class="border-l border-primary-40 flex flex-col pl-6 text-xs  w-24 lg:w-36">
+                                        <span class="text-2xl leading-tight font-bold">117, 98 <small class="block font-normal">Miliar Rupiah</small></span>
+                                        <span class="text-white">12,06%</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="section--apbd-pd-pad-list-item">
+                                <div class="flex items-center justify-between bg-gradient-to-r from-primary text-primary-yellow h-28 px-6 rounded-3xl">
+                                    <div class="w-10 h-10 lg:w-32 lg:h-32 rounded-full bg-cover bg-no-repeat text-primary lg:pr-4 flex items-center justify-center lg:text-5xl font-bold" style="background-image: url('assets/pad-numb.svg');">03</div>
+                                    <p class="text-xs lg:text-lg font-bold text-center flex-1 uppercase px-6">Hasil Pengelolaan Kekayaan Daerah yang dipisahkan</p>
+                                    <p class="border-l border-primary-40 flex flex-col pl-6 w-24 text-xs lg:w-36">
+                                        <span class="text-2xl leading-tight font-bold">46,24  <small class="block font-normal">Miliar Rupiah</small></span>
+                                        <span class="text-white">4,73%</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="section--apbd-pd-pad-list-item">
+                                <div class=" flex items-center justify-between bg-gradient-to-r from-primary text-primary-yellow h-28 px-6 rounded-3xl">
+                                    <div class="w-10 h-10 lg:w-32 lg:h-32 rounded-full bg-cover bg-no-repeat text-primary lg:pr-4 flex items-center justify-center lg:text-5xl font-bold" style="background-image: url('assets/pad-numb.svg');">04</div>
+                                    <p class="text-xs lg:text-lg font-bold text-center flex-1 uppercase px-6">Lain-lain PAD yang sah</p>
+                                    <p class="border-l border-primary-40 flex flex-col pl-6 text-xs w-24 lg:w-36">
+                                        <span class="text-2xl leading-tight font-bold">339, 31 <small class="block font-normal">Miliar Rupiah</small></span>
+                                        <span class="text-white">40,83%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-toggle-open="chart" class="bg-primary absolute inset-0 z-20  opacity-0 pointer-events-none">
+                            <div class="flex items-center h-full">
+                                <div class="chart w-full h-full pt-4"><canvas class="chart-bar"></canvas></div>
+                                <!-- <div class="chart w-full h-full pt-4"><canvas class="chart-pie"></canvas></div>
+                                <div class="chart w-full h-full pt-4"><canvas class="chart-line"></canvas></div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-6 mt-12 lg:flex-row lg:flex-flex-wrap lg:items-center">
+                        <div class="flex items-center gap-6 flex-1">
+                            <span class="border-t flex-1"></span>
+                             <a href="#" data-toggle="chart" class="rounded-xl bg-blue-600 py-2 px-4"><img src="assets/chart.svg" class="object-contain" width="20" height="10"></a>
+                        </div>
+                    </div>
+                    <img class="absolute bottom-0 right-0 pointer-event-none -z-1 hidden h-full object-contain lg:block" src="assets/pad_bg.svg">
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+        <script src="js/main.js" defer></script>
+
+        <script>
+            const red = '#E81F28';
+            const blue = '#018DD5';
+            const maroon = '#CE2258';
+            const yellow = '#FEAA3A';
+            const orange = '#FD6041';
+            const tosca = '#2DA4A8';
+            const green = '#0E3755';
+
+            function createChartBar(data) {
+                const options = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            ticks: {
+                                color: 'white'
+                            },
+                            grid: {
+                                borderColor: 'white'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'white'
+                            },
+                            grid: {
+                                borderColor: 'white'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        datalabels: {
+                            formatter: (value, ctx) => {
+                                const datapoints = ctx.chart.data.datasets[0].data
+                                const total = datapoints.reduce((total, datapoint) => total + datapoint, 0)
+                                const percentage = value / total * 100
+                                return percentage.toFixed(2) + "%";
+                            },
+                            color: 'white',
+                        }
+                    }
+                }
+
+                new Chart(document.querySelector('.chart-bar'), {
+                    type: 'bar',
+                    data: data,
+                    options: options,
+                    plugins: [ChartDataLabels],
+                });
+            }
+            createChartBar({
+                labels: ['Pendapatan Daerah', 'Belanja Daerah', 'Surplus/Deposit', 'Pembiayaan Netto', 'Sisa Lebih Pembiayaan Anggaran Tahun Berkenaan (SILPA)', 'Anggaran Belanja Menurut Pemerintah'],
+                datasets: [
+                    {
+                        backgroundColor: [maroon, orange, yellow, tosca, green, blue],
+                        data: [1000, 500, 200, 300, 400, 100],
+                    },
+                ]
+            })
+
+            function createChartPie(data) {
+                const options = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                usePointStyle: true,
+                                color: "white",
+                            }
+                        },
+                        datalabels: {
+                            formatter: (value, ctx) => {
+                                const datapoints = ctx.chart.data.datasets[0].data
+                                const total = datapoints.reduce((total, datapoint) => total + datapoint, 0)
+                                const percentage = value / total * 100
+                                return percentage.toFixed(2) + "%";
+                            },
+                            color: 'white',
+                        }
+                    }
+                }
+
+                new Chart(document.querySelector('.chart-pie'), {
+                    type: 'pie',
+                    data: data,
+                    options: options,
+                    plugins: [ChartDataLabels],
+                });
+            }
+            createChartPie({
+                labels: ['Pendapatan Daerah', 'Belanja Daerah', 'Surplus/Deposit', 'Pembiayaan Netto', 'Sisa Lebih Pembiayaan Anggaran Tahun Berkenaan (SILPA)', 'Anggaran Belanja Menurut Pemerintah'],
+                datasets: [
+                    {
+                        backgroundColor: [maroon, orange, yellow, tosca, green, blue],
+                        data: [1000, 500, 200, 300, 400, 100],
+                        borderWidth: 0
+                    },
+                ]
+            })
+
+            function createChartLine(data) {
+                const options = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            ticks: {
+                                color: 'white'
+                            },
+                            grid: {
+                                borderColor: 'white'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'white'
+                            },
+                            grid: {
+                                borderColor: 'white'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        datalabels: {
+                            formatter: (value, ctx) => {
+                                const datapoints = ctx.chart.data.datasets[0].data
+                                const total = datapoints.reduce((total, datapoint) => total + datapoint, 0)
+                                const percentage = value / total * 100
+                                return percentage.toFixed(2) + "%";
+                            },
+                            color: 'white',
+                        }
+                    }
+                }
+
+                new Chart(document.querySelector('.chart-line'), {
+                    type: 'line',
+                    data: data,
+                    options: options,
+                    plugins: [ChartDataLabels],
+                });
+            }
+            createChartLine({
+                labels: ['Pendapatan Daerah', 'Belanja Daerah', 'Surplus/Deposit', 'Pembiayaan Netto', 'Sisa Lebih Pembiayaan Anggaran Tahun Berkenaan (SILPA)', 'Anggaran Belanja Menurut Pemerintah'],
+                datasets: [
+                    {
+                        backgroundColor: [maroon, orange, yellow, tosca, green, blue],
+                        data: [1000, 500, 200, 300, 400, 100],
+                        borderColor: blue
+                    },
+                ]
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Buku Saku</title>
+        <meta name="description" content="BukuSaku" />
+        <meta name="keywords" content="BukuSaku" />
+        <meta http-equiv="cache-control" content="public, no-transform" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="canonical" href="">
+        <link rel="shortcut icon" href="" />
+
+        <!--nub.core -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+        <link href="css/main.min.css" rel="stylesheet">
+
+    </head>
+    <body class="text-base bg-primary text-white">
+
+        <!--header-->
+        <header class="header fixed top-0 inset-x-0 z-30">
+            <div class="header-body relative container w-full max-w-screen-xl mx-auto px-6 bg-primary">
+                <!--headae.navbar-->
+                <div class="header-navbar h-20 flex items-center justify-between gap-6">
+                    <div class="header-logo h-full flex items-center gap-4 lg:pr-12 lg:gap-12">
+                        <a href="/" class="logo logo--pemkab"><img alt="image" src="assets/logo-pemkab.png" class="object-contain" width="36" height="20"></a>
+                        <a href="/" class="logo logo--bkad"><img alt="image" src="assets/logo-bkad.png" class="object-contain" width="112" height="20"></a>
+                    </div>
+                    <div data-toggle-open="menu" class="header-menu fixed inset-0 overflow-y-auto transform translate-x-full flex-1 bg-primary-60 lg:relative lg:overflow-visible lg:translate-x-0 lg:bg-current z-10">
+                        <div class="header-menu-inner flex items-start min-h-full pt-20 p-6 lg:py-2 lg:px-12 lg:border-l-2 lg:border-primary-60">
+                            <ul class="header-menu-list flex flex-col uppercase gap-6 font-medium list-none flex-1 lg:flex-row">
+                                <li class="header-menu-list-item active"><a href="#">Home</a></li>
+                                <li class="header-menu-list-item">
+                                    <a data-dropdown="dashboard" href="#">Dashboard
+                                        <i class="caret ml-2 lg:hidden">
+                                            <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1L4 4L7 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </i>
+                                    </a>
+                                    <div data-dropdown-open="dashboard" class="sub mt-4 text-xs hidden">
+                                        <ul class="sub-list flex flex-col">
+                                            <li class="sub-list-item"><a href="">APBD</a></li>
+                                            <li class="sub-list-item"><a href="">SKPD</a></li>
+                                            <li class="sub-list-item"><a href="">Anggaran Pendidikan</a></li>
+                                            <li class="sub-list-item">
+                                                <a href="#" data-dropdown="anggaran">Anggaran Kesehatan 
+                                                    <i class="caret ml-2">
+                                                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M1 1L4 4L7 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </i>
+                                                </a>
+                                                <div data-dropdown-open="anggaran" class="sub hidden">
+                                                    <ul class="sub-list flex flex-col">
+                                                        <li class="sub-list-item"><a href="">2023</a></li>
+                                                        <li class="sub-list-item"><a href="">2022 (Awal)</a></li>
+                                                        <li class="sub-list-item"><a href="">2023 (Perubahan)</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="sub-list-item"><a href="">Rasio Belanja Pegawai</a></li>
+                                            <li class="sub-list-item"><a href="">ADD</a></li>
+                                            <li class="sub-list-item"><a href="">Bagi Hasil Pajak</a></li>
+                                            <li class="sub-list-item"><a href="">Bagi Hasil Restribusi</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header-menu-list-item"><a data-toggle="login" href="#">Hitung APBD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-button flex items-center gap-4">
+                        <!-- <a href="#" data-toggle="login"  class="btn btn--login rounded-full flex item-center py-3 px-10 bg-primary-80 hover:bg-primary-dark">Login</a> -->
+                        <div class="header-logo-hamburger relative z-10 lg:hidden">
+                            <button data-toggle="menu" class="hamburger -mr-6 pr-6" type="button">
+                                <div class="hamburger-icon">
+                                    <span class="hamburger-icon-inner bg-white"></span>
+                                </div>
+                            </button>
+                        </div>
+                    </div> 
+                </div>
+                    
+                <!--header.sub-->
+                <div data-dropdown-open="dashboard" class="header-sub bg-primary-60 h-12 mt-4 text-xs hidden lg:text-sm lg:h-16">
+                    <ul class="header-sub-list flex justify-between h-full">
+                        <li class="header-sub-list-item"><a href="">APBD</a></li>
+                        <li class="header-sub-list-item"><a href="">SKPD</a></li>
+                        <li class="header-sub-list-item"><a href="">Anggaran Pendidikan</a></li>
+                        <li class="header-sub-list-item">
+                            <a href="">Anggaran Kesehatan 
+                                <i class="caret ml-2">
+                                    <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L4 4L7 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </i>
+                            </a>
+                            <ul class="header-sub-list-item-sub flex flex-col absolute inset-x-0 bg-primary-80/50">
+                                <li class="header-sub-list-item-sub-item"><a href="">2023</a></li>
+                                <li class="header-sub-list-item-sub-item"><a href="">2022 (Awal)</a></li>
+                                <li class="header-sub-list-item-sub-item"><a href="">2023 (Perubahan)</a></li>
+                            </ul>
+                        </li>
+                        <li class="header-sub-list-item"><a href="">Rasio Belanja Pegawai</a></li>
+                        <li class="header-sub-list-item"><a href="">ADD</a></li>
+                        <li class="header-sub-list-item"><a href="">Bagi Hasil Pajak</a></li>
+                        <li class="header-sub-list-item"><a href="">Bagi Hasil Restribusi</a></li>
+                    </ul>
+                </div>  
+
+            </div>
+        </header>
+        
+        <div data-toggle-open="login" class="modal fixed top-1/2 inset-x-0 w-full max-w-md mx-auto -mt-72 lg:left-1/2 lg:ml-44 opacity-0 pointer-events-none z-20">
+            <div class="modal-inner min-h-full px-6">
+                <div class="modal-inner-body relative bg-white bg-opacity-50 backdrop-filter backdrop-blur-xs text-black border w-full p-12 pt-24 rounded-xl">
+                    <a href="#" data-toggle-close class="absolute top-4 right-4 text-white">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 27.5C21.9036 27.5 27.5 21.9036 27.5 15C27.5 8.09644 21.9036 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9036 8.09644 27.5 15 27.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18.75 11.25L11.25 18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11.25 11.25L18.75 18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div class="form flex flex-col gap-6">
+                        <div class="form-group border border-gradient rounded-xl">
+                            <input type="text" class="form-control h-10 px-4" placeholder="Nama">
+                        </div>
+                        <div class="form-group border border-gradient rounded-xl">
+                            <input type="text" class="form-control h-10 px-4" placeholder="Jabatan">
+                        </div>
+                        <div class="form-group border border-gradient rounded-xl">
+                            <input type="password" class="form-control h-10 px-4" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn--login w-full uppercase text-white rounded-xl font-semibold h-10 items-center bg-yellow-600">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--main-->
+        <main class="main h-full" role="main">
+
+            <!-- section.intro -->
+            <div class="section section--address h-full relative py-24 lg:pt-48" style="max-height: 920px;">
+                <div class="section-body relative container w-full h-full max-w-screen-xl mx-auto px-6">
+                    <img class="max-w-full mx-auto h-full object-contain" alt="image" src="assets/intro.png">
+                </div>
+            </div>
+
+            <!-- section.rpjmd -->
+            <div class="section section--rpjmd relative py-24 lg:pt-48">
+                <div class="section-body relative container w-full h-full max-w-screen-xl mx-auto px-6 pb-72">
+                   <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-12">
+                        <h1 class="bg-gradient-to-r from-gray-200 text-primary to-gray-500 pl-6 pr-16 py-4 -ml-6 border-2 border-l-0 rounded-r-full font-bold shadow-lg lg:ml-0 lg:pl-16 lg:text-xl lg:py-8 lg:w-5/12">
+                            RENCANA<br>
+                            PEMBANGUNAN 
+                            JANGKA MENENGAH
+                            DAERAH (RPJMD) <small class="block font-normal text-sm mt-2">KABUPATEN MALANG <br class="hidden lg:block">TAHUN 2021 - 2026</small></h1>
+                        <div class="flex flex-col gap-6 flex-1 lg:pt-16">
+                            <p>Visi pembangunan jangka menengah<br>
+                                Kabupaten Malang Tahun 2021-2026:</p>
+                            <p><b>“Terwujudnya Kabupaten Malang yang Bersatu,
+                                Berdaulat, Mandiri, Sejahtera dan Berkepribadian
+                                dengan Semangat Gotong Royong berdasarkan
+                                Pancasila dalam Negara Kesatuan Republik
+                                Indonesia yang Bhineka Tunggal Ika”</b></p>
+                            <p>Kabupaten Malang<br>
+                                <b>MAKMUR (Maju, Agamis, Kreatif, Mandiri, Unggul
+                                dan Responsif)</b> merupakan hal-hal pokok dan
+                                penting yang terkandung dalam visi dan menjadi
+                                pijakan pelaksanaan pembangunan
+                                Kabupaten Malang Tahun 2021-2026.</p>
+                        </div>
+                    </div>
+                    <img class="absolute top-0 right-32 pointer-event-none -z-1 hidden max-w-full object-contain lg:block" src="assets/rpjmd-bg-top.svg">
+                    <img class="absolute bottom-0 left-0 pointer-event-none -z-1 max-w-full object-contain" src="assets/rpjmd-bg-bottom.svg">
+                </div>
+            </div>
+
+             <!-- section.rkpd -->
+            <div class="section section--rpjmd relative py-24 lg:pt-48">
+                <div class="section-body relative container w-full h-full max-w-screen-xl mx-auto px-6">
+                   <div class="flex text-center flex-col items-center max-w-2xl mx-auto gap-12">
+                        <h1 class="w-full max-w-lg bg-gradient-to-r from-gray-500 via-gray-200 to-gray-500 text-primary px-6 py-4  border-2 rounded-full font-bold shadow-lg lg:px-16 lg:py-8 lg:text-xl">
+                            RENCANA KERJA <br>PEMERINTAH DAERAH (RKPD)
+                            <small class="block font-normal text-sm mt-2">KABUPATEN MALANG TAHUN 2021 - 2026</small></h1>
+                        <div class="flex flex-col gap-6 flex-1">
+                            <p>Tema atau Fokus Pembangunan  Kabupaten Malang Tahun 2022:</p>
+                            <p><b>“Mewujudkan Kabupaten Malang Yang Sejahtera, Berdaya Saing Melalui Pengembangan Pembangunan Ekonomi Daerah Sektor Pariwisata Serta Kualitas Daya Dukung Lingkungan Hidup”</b></p>
+                        </div>
+                        <img class="pointer-event-none -z-1 max-w-full" src="assets/rkpd-bg-b.svg">
+                    </div>
+                    <img class="absolute top-16 left-32 pointer-event-none -z-1 hidden max-w-full object-contain lg:block" src="assets/rkpd-bg-tl.svg">
+                    <img class="absolute top-16 right-32 pointer-event-none -z-1 hidden max-w-full object-contain lg:block" src="assets/rkpd-bg-tr.svg">
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+        <script src="js/main.js" defer></script>
+    </body>
+</html>
